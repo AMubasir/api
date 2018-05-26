@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 u = User.create( email: "example@testing.com",
-                password: "password" )
+                 username: "darklady",
+                 password: "password" )
 
 c = Category.create([ {culinary: "Gudeg", language: "Transactions"}, 
                       {culinary: "Sate", language: "Greetings"},
