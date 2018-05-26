@@ -1,0 +1,2 @@
+class Culinary < ApplicationRecord
+end
