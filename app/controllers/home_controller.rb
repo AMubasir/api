@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   # Public method
   def index
-    render json: { service: 'auth-api', status: 200 }
+    render json: { service: 'Ur on production now, congrats', status: 200 }
   end
   
   # Authorized only method
