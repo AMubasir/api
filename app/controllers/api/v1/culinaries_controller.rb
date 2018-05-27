@@ -4,7 +4,7 @@ module Api
     
       def index
         culinaries = Culinary.all
-        render json: {status: "Success", message: "Loaded Culinaries", data: culinaries}, status: :ok
+        render json: culinaries
       end
 
       def show
@@ -13,7 +13,7 @@ module Api
       end
 
       def create
-        culinary = Culinary.new
+        culinary = Culinary.new(culinary_params)
 
         if culinary.save
           render json: {status: "Success", message: "culinary Successfully Created", data: culinary}, status: :ok
@@ -36,6 +36,11 @@ module Api
         culinary = Culinary.find(params[:id])
         culinary.destroy
         render json: {status: "Success", message: "Deleted ", data: culinary}, status: :ok
+      end
+
+      private
+      def culinary_params
+        params.require(:culinary).permit(:name, :description, :category_id)
       end
 
     end
