@@ -40,7 +40,7 @@ module Api
 
       private
       def category_params
-        params.require(:category).permit(:culinary, :language)
+        params.require(:category).permit(:name)
       end
 
     end
