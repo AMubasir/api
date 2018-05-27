@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :categories
       resources :culinaries
       resources :crafts
+      resources :locations
     end
   end
   

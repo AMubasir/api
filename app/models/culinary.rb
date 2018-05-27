@@ -4,4 +4,5 @@ class Culinary < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :category
+  belongs_to :location
 end

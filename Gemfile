@@ -19,6 +19,7 @@ gem 'knock'
 gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'jwt'
+gem 'geocoder', '~> 1.4', '>= 1.4.8'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
