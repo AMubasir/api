@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_27_142625) do
+ActiveRecord::Schema.define(version: 2018_05_28_222048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 2018_05_27_142625) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+  end
+
+  create_table "category_languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "crafts", force: :cascade do |t|
@@ -41,12 +47,40 @@ ActiveRecord::Schema.define(version: 2018_05_27_142625) do
     t.index ["location_id"], name: "index_culinaries_on_location_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "date"
+    t.string "name"
+    t.text "description"
+    t.bigint "location_id"
+    t.bigint "group_month_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_month_id"], name: "index_events_on_group_month_id"
+    t.index ["location_id"], name: "index_events_on_location_id"
+  end
+
+  create_table "group_months", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "native_languages", force: :cascade do |t|
+    t.string "us"
+    t.bigint "category_language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "indonesia"
+    t.string "javanese"
+    t.index ["category_language_id"], name: "index_native_languages_on_category_language_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +97,7 @@ ActiveRecord::Schema.define(version: 2018_05_27_142625) do
   add_foreign_key "crafts", "locations"
   add_foreign_key "culinaries", "categories"
   add_foreign_key "culinaries", "locations"
+  add_foreign_key "events", "group_months"
+  add_foreign_key "events", "locations"
+  add_foreign_key "native_languages", "category_languages"
 end

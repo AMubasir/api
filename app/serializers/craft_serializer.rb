@@ -1,4 +1,4 @@
 class CraftSerializer < ActiveModel::Serializer
-  attributes :name, :description
+  attributes :id, :name, :description
   belongs_to :location
 end

@@ -9,7 +9,7 @@ module Api
 
       def show
         culinary = Culinary.find(params[:id])
-        render json: {status: "Success", message: "Loaded Culinaries", data: culinary}, status: :ok
+        render json: culinary
       end
 
       def create

@@ -1,19 +1,19 @@
 module Api
   module V1
     
-    class CategoriesController < ApplicationController
+    class CategoryLanguagesController < ApplicationController
       def index
-        categories = Category.all
-        render json: categories
+        c_languages = CategoryLanguage.all
+        render json: c_languages
       end
 
       def show
-        category = Category.find(params[:id])
+        category = CategoryLanguage.find(params[:id])
         render json: category
       end
 
       def create
-        category = Category.new(category_params)
+        category = CategoryLanguage.new(category_params)
 
         if category.save
           render json: {status: "Success", message: "Category Successfully Created", data: category}, status: :ok
@@ -23,7 +23,7 @@ module Api
       end
 
       def update
-        category = Category.find(params[:id])
+        category = CategoryLanguage.find(params[:id])
 
         if category.update_attributes(category_params)
           render json: {status: "Success", message: "Category Successfully Updated", data: category}, status: :ok
@@ -33,14 +33,14 @@ module Api
       end
 
       def destroy
-        category = Category.find(params[:id])
+        category = CategoryLanguage.find(params[:id])
         category.destroy
         render json: {status: "Success", message: "Deleted ", data: category}, status: :ok
       end
 
       private
       def category_params
-        params.require(:category).permit(:name)
+        params.require(:category_language).permit(:name)
       end
 
     end

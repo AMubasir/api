@@ -1,5 +1,5 @@
 class CulinarySerializer < ActiveModel::Serializer
   belongs_to :category
   belongs_to :location
-  attributes :name, :description
+  attributes :id, :name, :description
 end

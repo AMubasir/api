@@ -17,7 +17,11 @@ Rails.application.routes.draw do
       resources :categories
       resources :culinaries
       resources :crafts
+      resources :group_months
       resources :locations
+      resources :events
+      resources :category_languages
+      resources :native_languages
     end
   end
   
