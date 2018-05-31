@@ -35,7 +35,7 @@
   #     description: "The Kris is an asymmetrical dagger with distinctive blade-patterning achieved through alternating laminations of iron and nickelous iron (pamor). The kris is famous for its distinctive wavy blade, although many have straight blades as well.",
   #     address: "Banyusumurup girirejo, Girirejo, Imogiri, Bantul, Daerah Istimewa Yogyakarta 55782"
   #   }
-  #   ])
+    ])
 
   Category.create([ 
     { name: "Gudeg" },
@@ -61,7 +61,7 @@
   #     address: "Jl. Kaliurang KM. 4.5, Blok CT3 No. 5, Caturtunggal, Kecamatan Depok, Kocoran, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281",
   #     category_id: 1
   #    }
-  # ])
+  ])
 
   GroupMonth.create([ 
     {name: "May"},
@@ -98,7 +98,7 @@
   #     address: "Jl. Raya Srandakan 40, Puluhan Lor, Trimurti, Srandakan, Bantul, Daerah Istimewa Yogyakarta 55762",
   #     group_month_id: 2
   #   },
-  # ])
+  ])
 
   CategoryLanguage.create([ 
     {name: "Transactions"},
