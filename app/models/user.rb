@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  
   has_secure_password
   
   # Basic password validation, configure to your liking.

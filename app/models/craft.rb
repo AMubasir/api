@@ -1,4 +1,8 @@
 class Craft < ApplicationRecord
 
-  belongs_to :location
+  # belongs_to :location
+
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+  
 end

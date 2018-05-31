@@ -40,7 +40,7 @@ module Api
 
       private
         def craft_params
-          params.require(:craft).permit(:name, :description)
+          params.require(:craft).permit(:name, :description, :address, :latitude, :longitude)
         end
 
     end

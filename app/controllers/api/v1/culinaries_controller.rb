@@ -40,7 +40,7 @@ module Api
 
       private
       def culinary_params
-        params.require(:culinary).permit(:name, :description, :category_id, :location_id)      
+        params.require(:culinary).permit(:name, :description, :category_id, :address, :latitude, :longitude)      
       end
 
     end
